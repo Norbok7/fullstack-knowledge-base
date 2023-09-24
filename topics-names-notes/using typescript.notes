@@ -1,0 +1,7 @@
+typescript will not run in browser, therefore we have to compile typescriptto javascript
+
+compiling code will help us find errors, and will allow us to run code on browser.
+
+compiling converts typescript file to js file and notifies us of errors, but completiong will occur even with errors. 
+
+however it will let us know what erros there are so we can fix them in the JS file. 
