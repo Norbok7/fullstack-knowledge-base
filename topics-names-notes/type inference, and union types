@@ -1,0 +1,17 @@
+////////  type inference
+
+let course = 'react - the complete guide'; 
+
+course = 12341;  ///type number not assignable to string....due to type inference
+
+///it attempts to infer your types by what you intitialize originally.  
+
+// it is good to allow type inference to occur naturally whenver possible. 
+
+//////////////////////////////////////union types/////////////////////////////////////////////////
+
+let courses: string | number | [] = 'react - the complete guide';  ///this straight line allows union so both types are accepted, can even do more. 
+
+courses = 12341; 
+
+courses = [];
