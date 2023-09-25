@@ -1,0 +1,25 @@
+///function and function types
+function add(a: number, b: number ) {  /// if u scroll over add shows what values are there, and also shows inferred at end for return value
+  return a + b;
+}
+
+function print(value: any) { //shows as void 
+  console.log(value);
+}
+
+///generics
+
+function insertAtBeginning<T>(array: T [], value: T){  ///<T> 
+  const newArray = [value, ...array];
+  return newArray;
+};
+
+const demoArray = [1,2,3];
+
+const updatedArray = insertAtBeginning(demoArray, -1); // [-1, 2, 3]
+
+
+//generics feature converts function to a generic function
+//<T> helps to show Type and allows typescript to work whenever any can sometimes break a function]
+
+///generic allows flexible types and type safety.
