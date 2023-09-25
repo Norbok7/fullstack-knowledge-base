@@ -1,0 +1,61 @@
+//////////interface and classes
+
+
+///classes are blueprints to define objects
+class Student {
+
+  firstName: string;
+  lastName: string;
+  private age: number;
+  courses: string[];
+
+  constructor(first:string, last: string, age:number, courses: string[]){
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.courses = courses;
+  
+  enroll(courseName: string) {
+    this.courses.push(courseName);
+  }
+}
+}
+
+const student = new Student('Garrett', 'Garrett', 32, ['Angular']);
+student.enroll('react');
+student.age // is inaccessible here due to being private inside of class.
+student.lastName// is accessible do tue being public
+//using typescript we can put PRIVATE by a attribute under student, for example by age, and it makes it inaccessible outside of class, whereas everything else is public, or global.
+//student.courses => angular, react
+
+
+////////////////interfaces/////////////////////only accesible in typescript not in vanilla javascript
+//interfaces are object type definitions
+
+interface Human {
+  //here we can define structure or type
+  firstName: string;
+  age: number;
+
+  greet:  () => void;
+}
+let max: Human;
+max = {
+  firstName: 'Max',
+  age: 32,
+  greet() {
+    console.log('hello');
+  }
+}
+//why have interfaces if we have type keyword
+//#1 alternative
+//#2 interfaces can be implemented by classes, which forces classes to have structure 
+
+class Instructor implements Human { //initially before we define whats in braces there was a squiggly under instructor to show we have to fill parameters correctly essentially.
+firstName: string;
+age: number;
+greet() {
+  console.log('hey');
+}
+}
+//once i fill human via implements squiggly under isntructor goes away.
