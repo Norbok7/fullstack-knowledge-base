@@ -1,0 +1,6 @@
+let studentName = 'string';
+studentName = 'Garrett';
+
+let totalCourses = 0;
+totalCourses = 3;
+
