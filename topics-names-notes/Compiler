@@ -1,0 +1,6 @@
+///how to compile
+npx tsc --init// which shows configuration file which struct mode is a important option
+
+//in general read files to understand settings. 
+
+//angular gets these files out of the box so we dont really need this
