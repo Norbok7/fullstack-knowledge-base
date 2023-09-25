@@ -26,8 +26,7 @@ const student = new Student('garrett', 32, 75)
 
 student.displayInfo();
 
-
-isPassing(student.studentGrade);
+student.isPassing(student.studentGrade);
 
 
 
