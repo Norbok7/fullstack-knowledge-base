@@ -6,10 +6,10 @@ class Student {
   studentAge: number;
   studentGrade: number;
 
-  constructor (name: string, age: number, studentGrade: number){
-    this.studentName = name;
-    this.studentAge = age;
-    this.studentGrade = number;
+  constructor (studentName: string, studentAge: number, studentGrade: number){
+    this.studentName = studentName;
+    this.studentAge = studentAge;
+    this.studentGrade = studentGrade;
   }
 
 displayInfo(): void{
