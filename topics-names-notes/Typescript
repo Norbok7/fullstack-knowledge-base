@@ -1,0 +1,187 @@
+ Primitives: number, string, boolean. 
+ more complex tyeps: arrays, objects
+ Function types, parameters
+
+ Primitives
+ let age: number;
+
+ age = 12// numbers are okay but strings will show error in typescript
+
+ let userName: string;
+
+ userName = 'Max';
+ 
+ let isInstructor: boolean;
+
+ isInstructor = true;  ////////////these are 4 types of primitives in typescript
+
+ //null and undefined are used differently.
+
+ //////////////////more complex types///////////////////////////////////
+ let hobbies: string[];
+
+ hobbies = ['sports', 'Cook', 2];  // 2 is error because declared as string
+
+ let person: {
+  name: string;
+  age: number;
+ };  //object type definition,, aka defining type of object.
+
+ person = {
+  name: 'max',
+  age: 32
+ };
+
+ person = {  ///doesnt work because not as defined aka not storeable, wrong type.
+  isEmployee: true
+ };
+ 
+ let people: {  ///allows adding this and people bc of brackets.
+  name: string;
+  age: number; 
+ }[];
+  
+  ////
+  typescript will not run in browser, therefore we have to compile typescriptto javascript
+
+compiling code will help us find errors, and will allow us to run code on browser.
+
+compiling converts typescript file to js file and notifies us of errors, but completiong will occur even with errors. 
+
+however it will let us know what erros there are so we can fix them in the JS file. 
+/////////////////////////////////////////////////////////////////
+////////  type inference
+
+let course = 'react - the complete guide'; 
+
+course = 12341;  ///type number not assignable to string....due to type inference
+
+///it attempts to infer your types by what you intitialize originally.  
+
+// it is good to allow type inference to occur naturally whenver possible. 
+
+//////////////////////////////////////union types/////////////////////////////////////////////////
+
+let courses: string | number | [] = 'react - the complete guide';  ///this straight line allows union so both types are accepted, can even do more. 
+
+courses = 12341; 
+
+courses = [];
+//////////////////////////////////////////////////////////////////////////////////////////////
+/////keyword added in typescript is type
+
+type Person = {
+  name: string;
+  age: number;
+};
+
+
+///types allow us to help repeat things for example
+
+let person: Person;
+let people: Person[];
+
+//helps makign coding easier and easier to Maintain
+///////////////rationale behind typescript////////////////////////
+typescript extends javascript
+add static typing to javascript
+javascript is dynamically typed, but using typescript can help to enhance your code by using static typing
+
+with typescript it can clarify things javascript can not understand properly which can help us code better. 
+///////////////////////////////////////////////////////////////////
+//////////interface and classes
+
+
+///classes are blueprints to define objects
+class Student {
+
+  firstName: string;
+  lastName: string;
+  private age: number;
+  courses: string[];
+
+  constructor(first:string, last: string, age:number, courses: string[]){
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.courses = courses;
+  
+  enroll(courseName: string) {
+    this.courses.push(courseName);
+  }
+}
+}
+
+const student = new Student('Garrett', 'Garrett', 32, ['Angular']);
+student.enroll('react');
+student.age // is inaccessible here due to being private inside of class.
+student.lastName// is accessible do tue being public
+//using typescript we can put PRIVATE by a attribute under student, for example by age, and it makes it inaccessible outside of class, whereas everything else is public, or global.
+//student.courses => angular, react
+
+
+////////////////interfaces/////////////////////only accesible in typescript not in vanilla javascript
+//interfaces are object type definitions
+
+interface Human {
+  //here we can define structure or type
+  firstName: string;
+  age: number;
+
+  greet:  () => void;
+}
+let max: Human;
+max = {
+  firstName: 'Max',
+  age: 32,
+  greet() {
+    console.log('hello');
+  }
+}
+//why have interfaces if we have type keyword
+//#1 alternative
+//#2 interfaces can be implemented by classes, which forces classes to have structure 
+
+class Instructor implements Human { //initially before we define whats in braces there was a squiggly under instructor to show we have to fill parameters correctly essentially.
+firstName: string;
+age: number;
+greet() {
+  console.log('hey');
+}
+}
+//once i fill human via implements squiggly under isntructor goes away.
+//////////////////////////////////////////////////////////////////////////////////////////
+///function and function types
+function add(a: number, b: number ) {  /// if u scroll over add shows what values are there, and also shows inferred at end for return value
+  return a + b;
+}
+
+function print(value: any) { //shows as void 
+  console.log(value);
+}
+
+///generics
+
+function insertAtBeginning<T>(array: T [], value: T){  ///<T> 
+  const newArray = [value, ...array];
+  return newArray;
+};
+
+const demoArray = [1,2,3];
+
+const updatedArray = insertAtBeginning(demoArray, -1); // [-1, 2, 3]
+
+
+//generics feature converts function to a generic function
+//<T> helps to show Type and allows typescript to work whenever any can sometimes break a function]
+
+///generic allows flexible types and type safety.
+//////////////////////////////////////////////////////////////////////////////////////////////////
+///how to compile
+npx tsc --init// which shows configuration file which struct mode is a important option
+npx tsc filename.ts compiles to javascript, then
+node filename.js runs it in terminal
+//in general read files to understand settings. 
+
+//angular gets these files out of the box so we dont really need this
+

@@ -1,0 +1,21 @@
+#  angular basics
+what are components?
+what is two way data binding?
+how are files connected
+
+# typescript review
+typescript is a superset to javascript, more features than vanilla javascript
+Ex. types, classes, interfaces,...
+must be compiled to javascript to talk to browser
+
+# add bootstrap
+"node_modules/bootstrap/dist/css/bootstrap.min.css"
+under angular.json under styles
+
+# components
+build application via components
+root component nests others  components to html
+the main idea behind angular is building components 
+this makes it easier to be reusable and edited/updated
+# decorators 
+enhance your classes enhance your code @component, decorators always have @ in front of them

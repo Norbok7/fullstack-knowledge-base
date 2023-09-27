@@ -1,0 +1,83 @@
+# What is angular
+
+Angular is a javascript framework which allows you to create reactive Single-pass-Applications(SPAs).
+
+# Angular JS 1
+first version and totally different
+version that worked differently
+was not future PROOF. referred as angular js
+
+# Angular 
+is backward compatible angular 2+ is most stable version and known as Angular.
+
+# angular CLI
+npm install -g @angular/cli ...in cmd
+ng new 'string' no--strict
+cd 'string'
+ng serve
+npm install --save bootstrap@3
+# Ng model 
+input into app.module.ts so that typescript can understand this angular feature
+allows us to input new information that changes saved information on page in ex. our name
+
+#  angular basics
+what are components?
+what is two way data binding?
+how are files connected
+# typescript review
+typescript is a superset to javascript, more features than vanilla javascript
+Ex. types, classes, interfaces,...
+must be compiled to javascript to talk to browser
+# add bootstrap
+"node_modules/bootstrap/dist/css/bootstrap.min.css"
+under angular.json under styles
+# components
+build application via components
+root component nests others  components to html
+the main idea behind angular is building components 
+this makes it easier to be reusable and edited/updated
+# component object
+you need to pass component object to @Component in server.component.ts
+# you can inline
+on server typescript page but it is not suggested if you have more than 3 lines of code in html. you can also point to external files
+
+# template
+components must have a template 
+
+# selectors 
+can use selectors to target many different things
+# how to create server for app.module
+create folder named towards action
+server.component.html
+server.component.ts
+
+import { Component } from  '@angular/core';
+
+  @Component({
+
+selector:  'app-server',  <---name this
+
+templateUrl:  './server.component.html'
+
+})
+
+export  class  ServerComponent {
+
+  name the export class
+# Understanding Databinding
+databinding = communication
+					aka
+typescript(business logic   = template(html)
+# databinding types
+## output data
+string interpolation({{data}})
+property binding ([property]="data")
+## React to (user events)
+Event binding ((event)="expression")
+### combination of both is
+Two Way Binding ([ngModel)]="data")
+# event binding
+(click)="callMethodHere()"
+inline html typescript event above
+# two way data binding
+[(ngModel)]="serverName"
