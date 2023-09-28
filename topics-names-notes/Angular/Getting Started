@@ -81,3 +81,19 @@ Two Way Binding ([ngModel)]="data")
 inline html typescript event above
 # two way data binding
 [(ngModel)]="serverName"
+# directors
+instructions in the dom.
+# how to use 
+# structural directive
+<p *ngIf="call function/method aka true/false" this is a structural directive, it either adds this element or it doesnt this was  a if statement
+# template
+<ng-template  #noServer>
+<p>No server was created</p>
+</ng-template>
+not as commonly usedd
+
+# ng---style ex.
+[ngStyle]="{backgroundColor: getColor()}
+after htlm tag, then make formula if true/false
+# ng---inline class ex.
+[ngClass]="{online: serverStatus  ===  'online'}"
