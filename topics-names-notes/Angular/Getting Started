@@ -14,8 +14,10 @@ is backward compatible angular 2+ is most stable version and known as Angular.
 npm install -g @angular/cli ...in cmd
 ng new 'string' no--strict
 cd 'string'
-ng serve
+ng serve --open
 npm install --save bootstrap@3
+## create component
+ng g c "string"
 # Ng model 
 input into app.module.ts so that typescript can understand this angular feature
 allows us to input new information that changes saved information on page in ex. our name
@@ -86,6 +88,7 @@ instructions in the dom.
 # how to use 
 # structural directive
 <p *ngIf="call function/method aka true/false" this is a structural directive, it either adds this element or it doesnt this was  a if statement
+*ngif="count >3">
 # template
 <ng-template  #noServer>
 <p>No server was created</p>
@@ -97,3 +100,11 @@ not as commonly usedd
 after htlm tag, then make formula if true/false
 # ng---inline class ex.
 [ngClass]="{online: serverStatus  ===  'online'}"
+
+# propery binding 
+[] brackets
+# event binding
+(click)="method here"
+# *ngFor="">
+this is template to allow us to repeat code 
+# 
