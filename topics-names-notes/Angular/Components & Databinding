@@ -6,3 +6,7 @@ any component can bind to this if they are hosting this component
 assign alias 'string' inside input('catdog') now to call u call it with catdog
 # decorator #2 helps to listen from outside
 @Output() copy other steps above.
+
+#decorator #3
+@viewChild()
+@ViewChild('serverContentInput', {static: true}) serverContentInput: ElementRef;
