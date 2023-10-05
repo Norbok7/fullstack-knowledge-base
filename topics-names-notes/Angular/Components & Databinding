@@ -18,7 +18,7 @@ assign alias 'string' inside input('catdog') now to call u call it with catdog
 <ng-content></ng-content> allows information added to be serverContentInput
 
 #ngOnInit() {}
-this is a lifecyclehook,
+this is a lifecyclehook, they are used to run code at certain points in time
 
 # LOCAL REFERENCE
 how to create local REFERENCE
