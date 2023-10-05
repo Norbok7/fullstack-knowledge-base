@@ -1,0 +1,6 @@
+#  decorator
+@Input() , and import it 
+import {Component, Input} from '@angular/core';
+if you add this decorator you can bind to it with other parent components
+any component can bind to this if they are hosting this component
+
