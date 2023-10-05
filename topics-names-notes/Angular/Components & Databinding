@@ -10,3 +10,19 @@ assign alias 'string' inside input('catdog') now to call u call it with catdog
 #decorator #3
 @viewChild()
 @ViewChild('serverContentInput', {static: true}) serverContentInput: ElementRef;
+
+#decorator #4
+@ContentChild('contentParagraph', {static: true}) paragraph: ElementRef;
+
+# reusable widgets
+<ng-content></ng-content> allows information added to be serverContentInput
+
+#ngOnInit() {}
+this is a lifecyclehook,
+
+# LOCAL REFERENCE
+how to create local REFERENCE
+say #'string' this is now a local reference in html
+for example <p #cat></p>
+cat is now a local reference
+
