@@ -2,7 +2,8 @@
 structured around elements and changing them
 # structural directives
 affect whole area get elements are added or removed
-#Better Directive how to
+
+#Better Directive how to create and apply
 1. create ng g BetterDirective...optional put in folder
 2. EXAMPLE:::::of the better directive 
 import { Directive, OnInit, Renderer2, ElementRef } from '@angular/core';
@@ -18,4 +19,10 @@ ngOnInit() {
 }
 }
 3. how to apply <p appBetterHighlight>style me with BetterHighlight</p>
-4. 
+
+#HostListener how to create and apply 
+1. @HostListener() mouseover(){}
+2. import from angularcore
+3. 
+
+#
