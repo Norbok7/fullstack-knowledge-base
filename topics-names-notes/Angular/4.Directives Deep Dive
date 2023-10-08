@@ -2,3 +2,20 @@
 structured around elements and changing them
 # structural directives
 affect whole area get elements are added or removed
+#Better Directive how to
+1. create ng g BetterDirective...optional put in folder
+2. EXAMPLE:::::of the better directive 
+import { Directive, OnInit, Renderer2, ElementRef } from '@angular/core';
+
+@Directive({
+  selector: '[appBetterHighlight]'
+})
+export class BetterHighlightDirective implements OnInit {
+
+  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
+ngOnInit() {
+  this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue', false, false);
+}
+}
+3. how to apply <p appBetterHighlight>style me with BetterHighlight</p>
+4. 
