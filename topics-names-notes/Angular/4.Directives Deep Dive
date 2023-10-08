@@ -25,4 +25,7 @@ ngOnInit() {
 2. import from angularcore
 3. 
 
-#
+#Hostbinding decorator
+1. import from angular
+2.@HostBinding('style.backgroundColor') backgroundColor: string;
+3. can work with hostlistener 
