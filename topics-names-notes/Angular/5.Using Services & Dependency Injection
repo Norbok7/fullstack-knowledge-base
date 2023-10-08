@@ -1,0 +1,24 @@
+# what are services?
+acts as a central repository, somewhere to store code in
+#how to create a services
+can be a new folder or just created in app folder
+logging.service.ts 
+export class LoggingService {
+  logStatusChange(status:string) {
+    console.log('a server status changed, new status: ' + status);
+  } 
+}
+1. import service 
+2. add to constructor ex. constructor(private loggingService: LoggingService){}
+3. under @component({
+  add providers: [LoggingService] <---angular will recognize this 
+})
+
+## services hierarchical injector
+app module provides application wide
+app component provides for all components but not for other services
+any other component with services it provided for that component and all of its children components.
+...........only top parent needs providers array filled, still needs rest of information
+add @Injectable to recieving place of the service
+only add if you expect something to be injected
+

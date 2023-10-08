@@ -29,3 +29,32 @@ ngOnInit() {
 1. import from angular
 2.@HostBinding('style.backgroundColor') backgroundColor: string;
 3. can work with hostlistener 
+
+#ngSwithc 
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="5">value is 5</p>
+  <p *ngSwitchCase="10">value is 10</p>
+  <p *ngSwitchCase="100">value is 100</p>
+  <p *ngSwitchDefault>value is defaults</p>
+
+#ngFor
+*ngFor='let even of evenNumbers'>
+  {{even}}
+
+#ngSTyle
+ [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}">
+
+ #ngClass [ngClass]="{odd: even % 2 !== 0}"
+
+ #unlessDirective
+ export class UnlessDirective {
+@Input() set appUnless(condition: boolean) {
+if (!condition){
+  this.vcRef.createEmbeddedView(this.templateRef);
+} else {
+this.vcRef.clear();
+}
+}
+  constructor(private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef) { }
+
+}
