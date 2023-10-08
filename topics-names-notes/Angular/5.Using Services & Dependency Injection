@@ -19,6 +19,7 @@ app module provides application wide
 app component provides for all components but not for other services
 any other component with services it provided for that component and all of its children components.
 ...........only top parent needs providers array filled, still needs rest of information
-add @Injectable to recieving place of the service
+add @Injectable to recieving place of the service also add the import 
 only add if you expect something to be injected
+inject it by typing constructor(private x: X){}
 
