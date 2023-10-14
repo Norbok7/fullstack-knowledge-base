@@ -23,3 +23,5 @@ add @Injectable to recieving place of the service also add the import
 only add if you expect something to be injected
 inject it by typing constructor(private x: X){}
 
+#adding service
+NG G S BOOKSHELF-PAGE/BOOKSHELF --skip-tests
