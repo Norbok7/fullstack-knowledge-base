@@ -1,35 +1,34 @@
 #Routing makes it seem like pages are changing but it is the same page if done correctly
-#step 1
+# step 1
 go to app.module.ts and import { Routes} from angularcore
-#step 2
+# step 2
 create const under imports
 const appRoutes: Routes = [
   { path: 'exercises', component: ExerciseListComponent },
   { path: 'home', component: SidebarComponent }
 ];
-#step 3 
+# step 3 
 add RouterModule to imports on module page
 RouterModule.forRoot(appRoutes)
+ <ul class ="nav nav-tabs">
 
-<div class="container" id="topPage">
-  <div class="row">
-    <div class="col-md-8">
-      <ul class ="nav nav-tabs">
-        <li role="presentation" class="active"><a href ="/">Home</a></li>
-        <li role="presentation" class="active"><a href ="/exercises">Exercises</a></li>
+        <li role="presentation" class="active"><a routerLink ="/">Home</a></li>
+        <li role="presentation" class="active"><a routerLink ="/exercises">Exercises</a></li>
+        <li role="presentation" class="active"><a routerLink = "/workoutsCompleted">Total Workouts Completed</a></li>
       </ul>
-      <app-difficulty-level></app-difficulty-level>
-     
-      <p id="e">
-        <img
-          src="https://sandybumfit.files.wordpress.com/2018/07/start-your-fitness-journey.png"
-        />
-      </p>
+      in app component html
+# step 4
+to show active tabs<li routerLinkActive="active">
+to then hide home path add this to it 
+[routerLinkActiveOptions]="{exact: true}"
+# step 5 optional navigate programmatically
+can route to a method by inject in constructor 
+routerLink in constructor and import it from angular/router
+runToRoute(){
+this.router.navigate(['pathname']);}
 
-      <app-exercise-list></app-exercise-list>
+#step 6 know u can inject multiple things in constructor
+with , between
 
-      <router-outlet></router-outlet>
 
-    </div>
-  </div>
-</div>
+
