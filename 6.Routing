@@ -30,5 +30,21 @@ this.router.navigate(['pathname']);}
 #step 6 know u can inject multiple things in constructor
 with , between
 
+#step 7 setup onReload(){
+  this.router.navigate(['path'], {relativeTo:this.route});
+}
+then inject into constructor route: ActivateRout)
 
-
+#step 8 add parameters to routein module 
+{path: 'user/:id/:name', component: UserComponent},
+can now load component with dynamic piece
+#step 9 with step 8
+ngOnInit() {
+  this.user = {
+    id: this.route.snapshot.params['id'],
+    name: this.route.snapshot.params ['name']
+  }
+}
+#step 10 take this to our user.component.html and output that data
+<p> User with ID{{user.id}} loaded. </p>
+<p> User name is {{user.name}} </p>
