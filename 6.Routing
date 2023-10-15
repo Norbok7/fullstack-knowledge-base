@@ -48,3 +48,11 @@ ngOnInit() {
 #step 10 take this to our user.component.html and output that data
 <p> User with ID{{user.id}} loaded. </p>
 <p> User name is {{user.name}} </p>
+#step 11 to make 7-10 more advanced helps to be safer with changes on your components
+this.route.params
+.subscribe(
+  (params: Params) => { 
+    this.user.id = params['id'];
+    this.user.name = params [ 'name'];
+   }
+);
