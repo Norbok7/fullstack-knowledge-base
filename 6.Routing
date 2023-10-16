@@ -56,3 +56,25 @@ this.route.params
     this.user.name = params [ 'name'];
    }
 );
+#step 11 how to pass ? onto url example= ?mode=editing#loading
+in app module add {path: 'servers/i:id/edit' component: }
+#step 12 to to give privledge
+in html of component add [routerlink]=['/servers',5, 'edit']"
+[queryParams]="{allowEdit: '1'}
+fragment="loading"
+#step 13 how to retrieve that data of query params
+#step 14 Child Routes
+A child route is a route that is nested within another route. This means that the child route is only accessible if the parent route is also accessed. Child routes are defined in the routing module using the children property.
+For example, the following code defines a child route for the /users route:
+const routes: Routes = [
+  {
+    path: 'users',
+    component: UsersComponent,
+    children: [
+      {
+        path: ':id',
+        component: UserDetailComponent,
+      },
+    ],
+  },
+];
