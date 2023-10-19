@@ -1,0 +1,9 @@
+params is an example of an observable that is a string of values that gives us those new values
+
+#1 
+import { interval } from 'rxjs';
+ngONInit(){
+  interval(period: 1000).subscribe(next: count => { <-------new value emitted each second and then logged to console
+    console.log(count);
+  })
+}
