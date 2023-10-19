@@ -56,3 +56,17 @@ this.firstObsSubscription = customIntervalObservable.subscribe(data => {
 });
 
 #7 Operators 
+operator pipe
+use operators to do something to data, and then subscribe to that result
+customIntervalObservable.pipe(map(project: : data => {
+  return 'Round: '+ (data+1);
+})); 
+
+put this after this.firstObsSubscription = customIntervalObservable.pipe() on #6
+
+#8 Operator Filter
+.pipe(filter(data=> {
+  return data > 0;
+}))
+
+#9 Subjects
