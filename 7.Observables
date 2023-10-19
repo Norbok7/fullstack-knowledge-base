@@ -6,4 +6,21 @@ ngONInit(){
   interval(period: 1000).subscribe(next: count => { <-------new value emitted each second and then logged to console
     console.log(count);
   })
-}
+} 
+#2 observables continue emitting valuables continuously, so to prevent memory leaks you should
+unsubscribe to the observable
+#3 store subscriptions to prevent memory elak
+private firstObsSubscription: Subscription;
+ngONInit(){
+  this. firstObsSubscription = interval(period: 1000).subscribe(next: count => { <-------new value emitted each second and then logged to console
+    console.log(count);
+  })
+
+  ngOnDestroy(): void {
+    this.firstObsSubscription.unsubscribe(); <----prevents memory leaks
+  }
+} 
+in regards to this angular auto unsubscribes if they are a angular observable, ones you create you must
+unsubscribe to prevent memory leaks
+
+#4
