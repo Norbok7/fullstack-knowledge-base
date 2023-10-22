@@ -1,0 +1,45 @@
+#1 import formGroup instantiate it under class
+also import ReactiveFormsModule to module.ts
+example: 
+export class AppComponent{
+  genders = ['male,'female']
+  signupForm: FormGroup;
+}
+
+#2 then implement ngOnInit, and initialize it
+ngONInit(){
+  this.signupForm = new FormGroup({
+
+  });
+}
+#3 then 
+  ngONInit(){
+  this.signupForm = new FormGroup({
+    'username': new FormControl(null)
+    'email' : new FormControl(null)
+    'gender': new FormControl('male')
+  });
+}
+#4 then connect this to HTML code
+in html under <form>
+<form [formGroup]="signupForm"> <---how to connect
+
+#5 in input add
+formControlName='username"'
+then repeat this for other key value pairs ex. email, and gender
+
+#how to then submit once connected
+<form [formGroup]="signupForm" (ngSubmit)='onSubmit()>
+then go to typescript
+onSubmit(){
+  console.log(this.signupForm);
+}
+
+#add validation for reactive forms
+ 'username': new FormControl(null) add to this with more arguments
+
+    'username': new FormControl(null, Validators.required),
+    'email' : new FormControl(null, [Validators.required, Validators.email]),
+    'gender': new FormControl('male')'
+
+    
