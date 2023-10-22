@@ -68,3 +68,32 @@ forbiddenNames(control: Formcontrol): {[s: string]: boolean}{
   }
   return null; <--how to tell them Formcontrol is invalid
 }
+
+####ASYNC INVALIDATOR also pass this validator to object this.forbiddenEmail
+forbiddenEmail(control: FormControl): Promise<any> | Observable<any> {
+  const promise = new Promise<any>((resolve, reject)=> {
+    setTimeout(() => {
+    if(control.value === 'test@test.com') {
+      resolve({'emailIsForbidden': true});
+    } else {
+      resolve(null);
+    }
+  }, 1500);
+});
+return promise;
+}
+
+how to track formstate
+this.signupForm.valueChanges.subscribe(
+  (value) => console.log(value);
+);
+this.signupForm.setValue({
+  'userData': 'Max',
+  'email': 'max@@test.com'
+
+}
+'gender': 'male',
+'hobbies': 'soccer'
+)
+how to reset form 
+this.reset() in Submit
