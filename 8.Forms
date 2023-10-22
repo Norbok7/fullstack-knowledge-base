@@ -1,0 +1,104 @@
+#1 how angular handles forms
+angular looks for value output
+from the form and then interacts with it for example
+value: {
+  name: 'Max',
+  email: 'test@test.com'
+}
+valid: true
+
+##1 import FormsModule in module.ts
+
+#2 ngmodel> is made available in the forms module
+
+#3 place ngModel name="username">  on inputs
+for each value pair you do it like this
+
+#4 how to call on submit of your forms?
+<form (ngSubmit)="onSubmit(f)" #f="ngForm"> this will fire whenever form is submitted
+the #f="ngForm gives us access to the object created on submit via #f
+
+#5 alternative 
+@ViewChild('f') signupForm: NgForm; <---goes under class
+onSubmit() {
+  console.log(this.signupForm);
+}
+
+#6 form validation how to?
+go to html file 
+after name="username" required>
+after name="email" required>
+
+#7 [disabled]="f.valid">Submit</button>
+this makes disabled if not valid
+
+#8  css styling
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+turns red onced touched now and invalid
+
+#9 how to do #8 inside of html with text
+required
+email
+#email="ngModel">
+<span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+default value to be displayed
+in .ts ad a value defaultQuestion = 'teacher';
+go from ngModel to [ngModel]='defaultQuestion'
+
+<textarea name="questionAnswer" rows"3"  [(ngModel)]></textarea>
+
+#2 how to group inputs
+<div id="user-data" ngModelGroup="userData">
+can grab userData if username/email was wrong for example over agroup using *ngIf
+
+#3 Radio BUTTONS select 1
+<div class="radio" *ngFor="let gender of genders">
+<label>
+<inputtype="radio"
+name="gender"
+ngModel
+[value] = "gender">
+{{gender}}
+</label>
+</div>
+/////in typescript make a array gender = ['male', 'female'];
+
+# SUGGEST USERNAME BUTTONS
+in typescript add suggestUserName() {
+  const suggestedName ='Superuser';
+  this.signupForm.setValue({
+    userData: {
+      username: suggestedName,
+      email: ''
+    }
+    secret: pet,
+    questionAnser: '',
+    gender: male,
+  });
+}
+
+BETTER APPOACH TO THE ABOVE
+suggestUserName() {
+  const suggestedName = 'Superuser';
+}
+this.signupForm.form.patchValue({
+  userData:{
+username: suggestedName
+  }
+  });
+
+onSubmit() {
+  this.submitted = true;
+  this.user.username = this.signupForm.value.userData.email;
+  this.user.secretQuestion = thisx.signupForm.value.secret;
+  this.user.answer = this.signupForm.value. questionAnser;
+  this.user.gender = this.signupForm.value.gender;
+
+  this.signupForm.reset();  <----resets form ng content as well
+}
+
+///end template driven approach

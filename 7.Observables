@@ -69,4 +69,7 @@ put this after this.firstObsSubscription = customIntervalObservable.pipe() on #6
   return data > 0;
 }))
 
-#9 Subjects
+#9 Subjects is a special kind of Observable
+import { Subject } from'rxjs';
+activatedEmitter = new Subject<boolean>();
+also unsubscribe from Subjects
