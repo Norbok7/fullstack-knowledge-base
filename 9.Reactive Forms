@@ -42,4 +42,29 @@ onSubmit(){
     'email' : new FormControl(null, [Validators.required, Validators.email]),
     'gender': new FormControl('male')'
 
-    
+#gaining access to and adding notifications based of values
+add <span 
+*ngIf='!signupForm.get('username').valid && signupForm.get('username').touched'
+repeat for other fields example email
+
+#css style this warning message
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+#formgroup can be overall formgroup
+or can be inside of example nested form
+reflected nested items with . 
+
+#*ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index"
+
+instantiate a array of names u dont want to be userData
+forbiddenNames = [rat, jack]
+
+function create
+forbiddenNames(control: Formcontrol): {[s: string]: boolean}{
+  if(this.forbiddenNames.indexOf(control.value)){
+    return {'nameIsForbidden': true};
+  }
+  return null; <--how to tell them Formcontrol is invalid
+}
