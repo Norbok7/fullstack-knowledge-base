@@ -1,4 +1,4 @@
-#1 import formGroup instantiate it under class
+#1 import formGroup instantiate it under class,
 also import ReactiveFormsModule to module.ts
 example: 
 export class AppComponent{
@@ -12,7 +12,7 @@ ngONInit(){
 
   });
 }
-#3 then 
+#3 then fully initialize it below
   ngONInit(){
   this.signupForm = new FormGroup({
     'username': new FormControl(null)
@@ -20,7 +20,7 @@ ngONInit(){
     'gender': new FormControl('male')
   });
 }
-#4 then connect this to HTML code
+#4 then connect this/ sync to HTML code
 in html under <form>
 <form [formGroup]="signupForm"> <---how to connect
 

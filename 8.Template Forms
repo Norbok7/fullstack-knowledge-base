@@ -29,8 +29,8 @@ go to html file
 after name="username" required>
 after name="email" required>
 
-#7 [disabled]="f.valid">Submit</button>
-this makes disabled if not valid
+#7 [disabled]="!f.valid">Submit</button>
+  this makes [disabled] if not valid
 
 #8  css styling
 input.ng-invalid.ng-touched{
@@ -40,13 +40,14 @@ turns red onced touched now and invalid
 
 #9 how to do #8 inside of html with text
 required
-email
-#email="ngModel">
+#email="ngModel"/> <---whatever #'' is you use that in ur span
 <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 default value to be displayed
 in .ts ad a value defaultQuestion = 'teacher';
+in .ts ad a value defaultGenre = 'myster';
+go from ngModel to [ngMode]='mystery';
 go from ngModel to [ngModel]='defaultQuestion'
 
 <textarea name="questionAnswer" rows"3"  [(ngModel)]></textarea>
@@ -90,16 +91,25 @@ this.signupForm.form.patchValue({
 username: suggestedName
   }
   });
-
+submitted: boolean = false;
 onSubmit() {
   this.submitted = true;
   this.user.username = this.signupForm.value.userData.email;
-  this.user.secretQuestion = thisx.signupForm.value.secret;
+  this.user.secretQuestion = this.signupForm.value.secret;
   this.user.answer = this.signupForm.value. questionAnser;
   this.user.gender = this.signupForm.value.gender;
 
   this.signupForm.reset();  <----resets form ng content as well
 }
+formhasBeenSubmitted= false;
+2nd example
+onFormSubmit(formObj: NgForm) {
+  this.formhasBeenSubmitted = true;
+  this.bookDetails.title= formhasBeenSubmitted;
+  this.bookdetails.author = formhasBeenSubmitted;
+  this.bookDetails.genre = formhasBeenSubmitted;
 
+  formObj.reset();
+}
 ///end template driven approach
 
