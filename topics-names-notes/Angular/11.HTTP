@@ -1,0 +1,100 @@
+#http 
+file upload analytics store login information/personal information
+# anatomy of http request
+most important part URL /post/1 example
+http verb ===> post get put? what do you want to work send or get
+headers ===> {"content-type": "application/jason"}
+body===> {title: "new Post"} aka post put patch
+
+#1 setting up firebase need google account
+https://ng-complete-guide-89451-default-rtdb.firebaseio.com
+
+#2 need a new module in app module
+import { HttpClientModule } from '@angular/common/http';
+add HttpClientModule to imports array under @ngModule
+
+#3 inject constructor(private http: HttpClient) {}
+
+#4 add to function ......post gives us a observable
+onCreatePost(postData: {title: string; content; string}) {
+  //send http request
+  this.http.post('https://ng-complete-guide-89451-default-rtdb.firebaseio.com
+/post.json', postData) .subscribe(responseData => {
+  console.log(responseData);
+})
+}
+#5 ADD /post.json', postData above
+save and test request wont be sent here need observable
+
+#6 private fetchPosts(){
+  this.http.get('https://ng-complete-guide-89451-default-rtdb.firebaseio.com/post.json')
+  .subscribe(posts=>{
+    console.log(posts);
+  })
+}
+
+#7 onFetchPOsts() {
+  this.fetchPosts();
+}
+ngONinit(){
+  this.fetchPosts();
+}
+#8 how to transform object into array<--screams for observable operators
+private fetchPosts(){
+  this.http.get('https://ng-complete-guide-89451-default-rtdb.firebaseio.com/post.json')
+  .pipe(map(responseData=>{
+    const postsArray = [];
+    if(responseData.hasOwnProperty(key))
+    for(const key in responseData) {
+      postsArray.push({...responseData[key]})
+    }
+    return postsArray;
+  }))
+  .subscribe(posts=>{
+    console.log(posts);
+  })
+}
+#9 for #8 we need improt {map} from 'rxjs/operators';
+#10 make a model to give array a type map((responseData: { [key: string ]: Post }))
+const postsArray: Post[]=[];
+
+#11 next is output posts
+this.loadedPOsts = posts;
+<p *ngIf= "loadedPosts.length<1">No Posts Available!</p>
+<ul class="list-group" *ngIf="loadedPosts.length>=1">
+<h3>{{post.title}}</h1>
+<p>{{post.content}}</p>
+</li>
+</ul>
+
+#12 loading indicator
+isFetching = false;
+pviate fetchPosts(){
+  this.isFetching = True;
+}
+in subscribe set it back to false
+<p *ngIf= "loadedPosts.length<1 && !isFetching">No Posts Available!</p>
+<ul class="list-group" *ngIf="loadedPosts.length>=1 && !isFetching">
+</ul>
+<p *ngIf="isFetching">Loading...</p>
+
+#13 refactoring above code
+outsource above into services
+#14 posts.service.ts
+import {Injectable} from '@angular/core';
+@injectbale({provideIn: 'root'})
+export class PostsService {
+  constructor(private http: HttpClient){}
+  createAndStorePost(title: string, content: string){
+    const postData: Post = {title: title, content: content};
+    .post<{name: string}>(
+      'http://ng-complete.com/posts.json',
+      postData
+    )
+    .subscribe(responseData=>{
+      console.log(responseData);
+    })
+  }
+
+}
+#### go back and inject this into app component to utilize it

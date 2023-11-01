@@ -1,0 +1,30 @@
+definition pipes are a angular feature built into allow you to transform and output
+
+basic example: username: 'string'
+<p> {{username | uppercase}}</p> adds styling for that specific interpolation
+
+
+# 1 passing pipe parameters : data
+{{server.instanceType | uppercase}}
+{{server.started | date: 'fullDate' | uppercase  }} makes full date uppercase has to be in right order
+order is important executed left to right
+
+# 2 create own pipe? 
+ng g p shared/pipes/sort-books <---cli creationg method
+
+# 3 transform(value: unknown, ...args: unkonwn[]); unknown{
+  return[]; 
+}
+#4 # 3 transform(books: Book[], field:string); unknown{
+  books.sort((a: Book, b: Book)> {
+      if(a[field] <b[field]){
+    // -1 a before b //
+     return -1;
+    }else {
+    //1 a after b //
+    return 1;
+  })
+  return books; 
+}
+on html ur entering *ngFor=let book of mysavedbooks | sortBooks: 'title'">
+
