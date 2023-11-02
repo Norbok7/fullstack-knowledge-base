@@ -1,3 +1,24 @@
+HTTP: Hyper-Text Transfer Protocol is the webs standard 
+for transferring data between networked devises. A typical 
+flow using HTTP involves a client/user making an HTTP Request 
+to a server in order to get an HTTP Response of the pages HTML, CSS & JS.
+
+API: An Application Programming Interface is a set of data
+ or functions that is accessible to third-party developers. 
+ This allows companies or individuals to communicate with each 
+ other and leverage each other's data through documentation. API's 
+ are critical to learn as a developer... you will use them a lot!
+ aka set of rules and guidlines how to interact with it
+
+CRUD: Create | Read | Update | Delete are the features every 
+application usually needs to implement to make a working application.
+ We do this by sending specific HTTP requests to a server.
+
+Firebase: Firebase is a "BaaS" (Backend as a Service) created
+ by Google to make it easier to do all things backend. 
+ (Realtime Databases, File Storage, Authentication, Hosting. . .)
+
+
 #http 
 file upload analytics store login information/personal information
 # anatomy of http request

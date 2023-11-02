@@ -1,0 +1,9 @@
+how authentication works
+client ==> Server sending auth data
+has to happen on Server
+then server sends back token
+client then stores token to authenticate
+server can validate it bc it created it
+this is why its secure
+
+#1
