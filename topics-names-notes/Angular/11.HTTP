@@ -18,6 +18,14 @@ Firebase: Firebase is a "BaaS" (Backend as a Service) created
  by Google to make it easier to do all things backend. 
  (Realtime Databases, File Storage, Authentication, Hosting. . .)
 
+#BASIC STEPS
+create HTTP.service.ts
+//save books to Firebase
+//Fetch Books from firebase
+==>> go to modules.ts and ADD HttpClientModule @angular/common/http
+
+
+
 
 #http 
 file upload analytics store login information/personal information
@@ -35,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
 add HttpClientModule to imports array under @ngModule
 
 #3 inject constructor(private http: HttpClient) {}
+#3.5 create const firebaseUrl = "http://project.com" <== so url is saved put this above injectable
 
 #4 add to function ......post gives us a observable
 onCreatePost(postData: {title: string; content; string}) {
