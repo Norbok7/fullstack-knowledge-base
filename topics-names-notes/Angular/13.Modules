@@ -1,8 +1,0 @@
-AppModule --> Appcomponent --> productComponent --> Highlight Directive --> ProductsService
-
-#1 App module
-declarations
-Components Directives, and Active pipes
-imports =
-Modules  to speed up operations that you woudl have to put in one by one
-SERVICES any service you want to use need to be put in module or can put provided in root

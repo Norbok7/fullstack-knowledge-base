@@ -1,0 +1,64 @@
+AppModule --> Appcomponent --> productComponent --> Highlight Directive --> ProductsService
+
+#1 App module
+declarations
+Components Directives, and Active pipes
+imports =
+Modules  to speed up operations that you woudl have to put in one by one
+SERVICES any service you want to use need to be put in module or can put provided in root
+
+process of creating aplication revovles around making tsure that we are able to optimize our application to make a better
+user experience
+
+Dynamic components, during compilation phase of application, all of components load.
+Essentially LOADING at runtime instead of everything at once.  Limited to bundle size of loading application
+
+#how to optimize application, and how to split into different modules.
+2 types of ways to go about laoding, eger loading, and lazy loading. 
+#Eager loading ==== loads everything on page at once not as effective as it gets bigger
+#Lazy loading ==== delays initialization of a resource as long as possible. \
+
+What is considered a small application?
+
+Separate Application by Modules, then Separate
+beneficial because if your in a group, you wont go through many merge conflicts.
+if a programmer is altering a file, and another is also altering it.  
+
+ex. auth - bookshelf - library
+then put related information below these topics. 
+
+KEEP TRACK OF BUNDLE SIZE with ng build. 
+main file raw size = 283.6 kb <--- only load modules that are on demand. 
+
+create a module. # ng g m bookshelf-page/bookshelf
+gives you bookshelf.module.ts
+similar to app module. 
+Configured to be a MODULE ex. export class BookshelfModule {}
+
+how to load modules on demand????????
+create  a route. 
+const routes: Routes = [ inside here put all routes related to this module 
+  anything bookshelf related and its children in the app-routing.module.ts 
+]then declare those in declarations array after importing components from routes. 
+ALSO in the bookshelfModule page, import [ common module, routermodule.forChild(routes)] export [RouterModule]
+
+then go back to app-routing modules.ts
+and add {path: 'bookshelf',} basically taking code from routing module, and inputting the routes specifically into the bookshelf module
+change primary path in bookshelf module from bookshelf to '' so its not bookshelf/bookshelf
+
+{path: 'bookshelf',
+loadChildren: ()=> import("./bookshelf-page/bookshelf.module).then((m)=>m.bookshelfModule)} <===path to module
+the above code is locatied in angular.io/dguide/lazy-loading
+
+read out errors once you do above steps remove related pages from app.module.ts ex. all components used in bookshelf.module.ts
+ALSO if a selector is broken you need to declare it on your new bookshelf module
+ CHECK if someting not working and used in multiple spots create ng g m shared
+ then fill components, and follow up by importing that module to bookshelf module.
+ examples, formsmodule, directives 
+
+ BASICALLY create module for routes, import necessary components unique to that component.
+ THEN ones used across application create shared.module.ts 
+
+ ng g m library-page/library REPEAT ABOVE PROCESS
+
+ ###NGBUILD COMPILES ENTIRE APPLICATION, TURNS TS INTO JScript etc
