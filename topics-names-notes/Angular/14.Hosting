@@ -1,0 +1,46 @@
+add type to package.json"type": "module", ---under name, and version.
+then build project locally
+
+run command in terminal ng build 
+this will output a folder called "dist" containing files called our production app <--what is used to Host
+
+install this --> npm install -g firebase-tools 
+alternatively could use vercel.com
+
+in terminal type firebase login
+click no
+
+will open tab in browser, and log in with google allow firebase
+once you login init local app
+
+in terminal then run ==> firebase init hosting 
+
+please select an option:
+Use an Existing project
+click your project and press ENTer
+
+then what do you want to use as your public directory? dist/book-based-source-of-truth
+configgure as a single page app? yes
+set up automatic builds and deploys with gitHub yes
+file dist/book-based-source-of-truth/index.html already exists. Overwrite? no
+
+will open github, and authrize firebase cli? authorize firebase click
+norbok/repo name and hit ENTer
+
+set up the workflow to run a build script before every deploy? yes
+
+what script should be run before every deploy? type in npm run build
+
+set up automatic deployment to your sites's live channel when a pr is merged? yes
+
+what is the name of the github branch associated with your site's live channel? main
+
+initialization should be complete here
+
+then in terminal run firebase deploy (hope it runs and no errors)
+
+should hav e project console, and a hosting url
+
+William Wilder 12:19 PM
+I use Vercel for everything. Netlify is good for HTML/CSS/JS. Firebase is good if you already have a firebase project
+
