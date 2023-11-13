@@ -1,0 +1,28 @@
+how to incorporate a service worker
+can sometimes be niche to have  progressive web app, but is becoming more popular
+
+go to terminal, ng add @angular/pwa
+
+would you like to proceed? yes
+
+if error(google how to clear npm cache 
+William Wilder 12:50 PM rm=remove
+1. rm -rf node_modules
+2. rm package-lock.json
+3. npm cache clean —force
+4. npm i
+)
+
+then run ng add @angular/pwa 
+click yes
+
+run ng build and cd dist/your-apps-name
+
+http-server <==run in terminal and enter
+
+HOW TO CHECK SERVICE WORKS, to to page inspect, go to application service workers, 
+and check status should say is activated and is running
+source ngsw-worker.js
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
