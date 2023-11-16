@@ -1,0 +1,54 @@
+#Two types of testing
+
+Manual Testing -creating a feature checking for errors? does it do what we want, we have been doing this.
+this is very time consuming.  
+
+Automated Testing - testing out the logic of our application if it works with other specific features.
+is what we are passing into our code breaking this?
+
+3 well known levels of testing
+End-to-end, coverage full, performance slow, reliability, least reliable, isolate failures hard, simulate real user  yes.
+Integration, coverage large, performance, fast, reliability reliable, isolate failures fair, simulate no
+Unit coverage small, performance fastests, reliability most reliable, isolate failures easy, simulate no
+
+-----------------------------------------------------------------------------------------------------------
+Unit Test Example: 
+create spec file if none exists
+sort-books.pipe.spec.ts === if it has spec angular recognizes it is a test file
+
+//imports
+//components, pipes, services, 
+//testing services
+//describe basically means what are we testing?
+//creating  a series of test scenarios
+
+describe("sortBooksPipe", ()=>{
+
+  consto pipe = new SortBooksPipe();
+
+//scenario # 1 - see if pipe instance exists
+  it("creates an instance", ()=>{
+      expect(pipe).toBetruthy();
+  });
+  // scenario #2  - see if pipe can sort by title?
+  it("should sort books by title", ()=>{
+  //fake data
+  const books: Book[] = [
+    new Book(1, 'The wind in the willows', 'John Doe', 'http://website.com/image.png'
+    ),
+    new Book('2', 'Children of Time', 'Andre Tchaikowsky', 'http://website.com/image.png'
+    ),
+    new Book('3', 'The Hobbit', 'J.r.r Tolkien', http://wesbite.com/image.png'
+    ),
+  ];
+  const field: sortBookFieldT = 'title';
+
+  const sortedBooks = pipe.transform(books, field);
+
+  expect(sortedBooks[0].title).toBe('Children of Time');
+  expect(sortedBooks[1].title).toBe('The Hobbit');
+  expect(sortedBooks[2].title).toBe('the wind of the willows');
+  //we want to use fake data above and use transform.
+  });
+});
+
