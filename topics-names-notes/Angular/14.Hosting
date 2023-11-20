@@ -25,7 +25,7 @@ set up automatic builds and deploys with gitHub yes
 file dist/book-based-source-of-truth/index.html already exists. Overwrite? no
 
 will open github, and authrize firebase cli? authorize firebase click
-norbok/repo name and hit ENTer
+norbok/repo name and hit ENTer ex. = Norbok7/Exercise-Plan-Class-Project-Updated
 
 set up the workflow to run a build script before every deploy? yes
 
@@ -39,7 +39,7 @@ initialization should be complete here
 
 then in terminal run firebase deploy (hope it runs and no errors)
 
-should hav e project console, and a hosting url
+should have project console, and a hosting url
 
 William Wilder 12:19 PM
 I use Vercel for everything. Netlify is good for HTML/CSS/JS. Firebase is good if you already have a firebase project
