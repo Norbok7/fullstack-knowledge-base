@@ -11,8 +11,8 @@ was not future PROOF. referred as angular js
 is backward compatible angular 2+ is most stable version and known as Angular.
 
 # angular CLI
-npm i -g @angular/cli ...in cmd
-ng new 'string' --no-strict
+npm i -g @angular/cli ...in terminal
+ng new 'project name' --no-strict
 cd 'string'
 ng serve --open
 npm i --save bootstrap@3
