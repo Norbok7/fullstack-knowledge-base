@@ -1,0 +1,12 @@
+creating branches off the main
+vocab----------
+branch = a branch is a copy of a code line, managed in a
+ version control system that helps teams work parallel on different features simultaneously
+
+ pull request = A pull request is when a developer asks for changes on a branch to be committed to an extrernal
+ respository by pushing their code up for review, hopefully, to be accepted and merged into the resositories 
+ main source code. 
+
+ merge conflict = A merge conflict is when  multiple developers make concurrent changes around the 
+ same lines of code and create pull requests. The merge conflict must be resolved by choosing to be 
+ accepted in the area where the conflicting code occurs. 
