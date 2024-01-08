@@ -36,9 +36,9 @@ set up automatic deployment to your sites's live channel when a pr is merged? ye
 what is the name of the github branch associated with your site's live channel? main
 
 initialization should be complete here
-
-then in terminal run firebase deploy (hope it runs and no errors)
-
+hope it runs and no errors)
+ng build???maybe do this step here 
+final stop type firebase deploy in terminal
 should have project console, and a hosting url
 
 William Wilder 12:19 PM

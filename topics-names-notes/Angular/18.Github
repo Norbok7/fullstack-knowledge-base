@@ -10,3 +10,46 @@ branch = a branch is a copy of a code line, managed in a
  merge conflict = A merge conflict is when  multiple developers make concurrent changes around the 
  same lines of code and create pull requests. The merge conflict must be resolved by choosing to be 
  accepted in the area where the conflicting code occurs. 
+
+ click new(name project if using a template insert here now)
+description nothing, unless you put website here
+make it public/private
+private can make collaboraters so ppl can work on it with you
+add readme - check yes
+employers will check how well your readme is written
+search google to make readme look better
+most use mit license
+
+git commit - m 'styles'
+git add .
+git status
+
+add commit message = git commit -m "INIT" (common messages are BUG, DOC, ...)
+git push
+
+-------------HOW TO WORK AS TEAM--------------
+MAIN BRANCH = PRODUCTION -- never touch directly in teams...senior developers do
+STAGING BRANCH = you are never going to touch this either
+FEATURE BRANCH = 
+BUG FIX BRANCH = 
+
+PULL STAGING BRANCH BEFORE PUSHING YOUR FEATURE
+
+before creating pull request
+go to github desktop go to staging branch, fetch origin
+
+go back to your branch 
+click choose a branch to merge into your branch...click staging (to pull them into your repository)
+open in VSCODE fix errors
+go back to github desktop should show its resolved
+
+START OF DAY
+#1 STAGING BRANCH FETCH ORIGIN, and pull down 
+#2 Create new branch base it off of staging(will be more updated);
+#3 after created make your changes FEAT(js): contact form logic <---example
+#4 THEN fetch origin from staging branch, and pull them if their are changes]
+#5 click choose a branch to merge into your branch...click staging (to pull them into your repository)
+#6 open in VSCODE fix errors
+#7 go back to github desktop should show its resolved
+
+setting collaboraters add collaboraters 
